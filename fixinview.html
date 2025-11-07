@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FixInView — Karachi</title>
+<meta name="description" content="Skip the crowded markets. Book a trusted technician to repair your phone at your door in front of you. Priority same-day slots available." />
+<style>
+  :root{
+    --bg:#000000;
+    --panel:#071014;
+    --cyan:#00d1d1;
+    --muted:#9aa7a7;
+    --glass: rgba(255,255,255,0.03);
+    --maxw:1100px;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#000000 0%, #050505 100%);
+    color:#e6ffff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+  .container{max-width:var(--maxw);margin:28px auto;padding:24px;}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:72px;
+    height:72px;
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#001818;font-size:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.6);
+  }
+  .brand h1{font-size:18px;margin:0;letter-spacing:0.2px}
+  nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+  nav a.cta{background:var(--cyan);color:#001818;padding:10px 14px;border-radius:10px;text-decoration:none}
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;margin-top:26px;align-items:center}
+  .hero-card{padding:28px;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+  .eyebrow{display:inline-block;background:rgba(0,0,0,0.4);padding:6px 10px;border-radius:999px;color:var(--cyan);font-weight:700;margin-bottom:12px}
+  h2{margin:6px 0 10px;font-size:28px;color:#eaffff}
+  p.lead{color:var(--muted);margin:0 0 18px}
+  .features{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+  .feature{padding:12px 14px;border-radius:10px;background:var(--glass);color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.02)}
+
+  /* Booking card */
+  .booking{background:linear-gradient(180deg,#00151500, rgba(0,0,0,0.4));padding:20px;border-radius:12px;border:1px solid rgba(0,209,209,0.07)}
+  label{display:block;font-size:13px;color:var(--muted);margin-top:12px}
+  input[type="text"], input[type="tel"], input[type="datetime-local"], textarea, select{
+    width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#dff;
+    outline:none;font-size:14px;margin-top:6px;
+  }
+  textarea{min-height:80px;resize:vertical}
+  .row{display:flex;gap:10px}
+  .row > *{flex:1}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:#002121;padding:10px 14px;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+  .mutebtn{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 12px;border-radius:8px;cursor:pointer}
+  .small{font-size:13px;color:var(--muted)}
+
+  /* Services & pricing */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+  .price{font-size:20px;color:var(--cyan);font-weight:900}
+  table{width:100%;border-collapse:collapse;margin-top:12px}
+  th,td{padding:10px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;font-size:14px;color:var(--muted)}
+
+  /* FAQ */
+  .faq{margin-top:18px}
+  .faq-item{background:transparent;padding:12px;border-radius:10px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.02)}
+
+  footer{margin-top:30px;padding:18px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .badge{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+  /* responsive */
+  @media (max-width:980px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr 1fr}.container{padding:16px}nav a{display:none}}
+  @media (max-width:520px){.grid-3{grid-template-columns:1fr}.logo{width:46px;height:46px}h2{font-size:22px}}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="FixInView Logo" class="logo" />
+        <div>
+          <h1>FixInView — Karachi</h1>
+          <div style="font-size:12px;color:var(--muted)">Trusted on-site phone repair — transparent & fast</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a class="cta" href="#booking">Book Now</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="hero-card">
+        <span class="eyebrow">Karachi • FixInView</span>
+        <h2>We come to you and fix your phone in front of you — fast, honest, guaranteed.</h2>
+        <p class="lead">Skip the crowded markets and parking hassle. Our certified technicians arrive at your address, repair your device
+
+        <div class="features">
+          <div class="feature">Transparent pricing</div>
+          <div class="feature">Genuine parts & warranty</div>
+          <div class="feature">Priority same‑day bookings</div>
+          <div class="feature">WhatsApp booking</div>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card">
+            <strong>On-site Repair</strong>
+            <div class="small">Technician fixes while you watch. Minor repairs often completed immediately.</div>
+          </div>
+          <div class="card">
+            <strong>Genuine Parts</strong>
+            <div class="small">Parts from trusted suppliers. We show the part serial & receipt before replacement.</div>
+          </div>
+          <div class="card">
+            <strong>Warranty</strong>
+            <div class="small">7‑30 day warranty on workmanship & parts depending on service.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px" class="small">Pilot areas: Clifton, DHA, PECHS. We'll expand as we scale.</div>
+      </section>
+
+      <aside id="booking" class="booking">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <div>
+            <strong style="font-size:18px">Book a Technician</strong>
+            <div class="small">Choose Same-day priority or schedule a cheaper slot</div>
+          </div>
+          <div class="badge">Visit fee applies</div>
+        </div>
+
+        <form id="bookForm" onsubmit="return handleBooking(event)">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Ali Khan" required />
+
+          <label for="phone">Phone (WhatsApp)</label>
+          <input id="phone" name="phone" type="tel" placeholder="e.g. 03001234567" pattern="^[0-9+ ]{8,20}$" required />
+
+          <label for="address">Address (exact)</label>
+          <input id="address" name="address" type="text" placeholder="House, street, area, city" required />
+
+          <div class="row">
+            <div>
+              <label for="datetime">Preferred date & time</label>
+              <input id="datetime" name="datetime" type="datetime-local" required />
+            </div>
+            <div>
+              <label for="urgent">Booking type</label>
+              <select id="urgent" name="urgent" required>
+                <option value="scheduled">Scheduled (cheaper)</option>
+                <option value="priority">Same‑day / Priority (+20%)</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="device">Device & issue</label>
+          <input id="device" name="device" type="text" placeholder="e.g. iPhone 11 — cracked screen" required />
+
+          <label for="notes">Extra notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Any relevant notes like available parking, gate code, preferred contact time"></textarea>
+
+          <div style="display:flex;gap:10px;margin-top:14px;align-items:center">
+            <button class="btn" type="submit">Book via WhatsApp</button>
+            <button type="button" class="mutebtn" onclick="copyNumber()">Copy WhatsApp</button>
+          </div>
+
+          <div id="disclaimer" class="small" style="margin-top:12px;color:var(--muted)">
+            By booking you agree to our <a href="#terms" style="color:var(--cyan);text-decoration:none">terms</a>. Visit fee waived on repairs above PKR 3000.
+          </div>
+        </form>
+      </aside>
+    </main>
+
+    <section id="how" class="hero-card" style="margin-top:22px">
+      <h3 style="margin:0 0 8px">How it works</h3>
+      <div class="small">Simple 3-step process:</div>
+      <ol style="margin-top:12px;color:var(--muted)">
+        <li><strong>Book</strong> a slot and choose priority or scheduled.</li>
+        <li><strong>Technician arrives</strong> with tools & verified ID. You watch the work live.</li>
+        <li><strong>Pay</strong> after repair. We accept cash, Easypaisa & bank transfer. Get invoice & warranty.</li>
+      </ol>
+
+      <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+        <div class="card"><strong>Safety</strong><div class="small" style="margin-top:6px">Background-checked technicians. Photo ID & branded kit.</div></div>
+        <div class="card"><strong>Transparency</strong><div class="small" style="margin-top:6px">We show part receipts, before/after photos & IMEI verification.</div></div>
+        <div class="card"><strong>Speed</strong><div class="small" style="margin-top:6px">Most minor repairs done on-site within 30–90 minutes.</div></div>
+      </div>
+    </section>
+
+    <section id="pricing" class="hero-card" style="margin-top:18px">
+      <h3 style="margin:0 0 8px">Pricing (example)</h3>
+      <div class="small">Transparent base prices — final quote may vary by device model & parts.</div>
+      <table aria-labelledby="pricing" role="table">
+        <thead>
+          <tr><th>Service</th><th>Typical cost (PKR)</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Screen replacement (glass)</td><td class="price">4,000 - 12,000</td><td>Depends on model & part quality</td></tr>
+          <tr><td>Battery replacement</td><td class="price">1,500 - 4,500</td><td>Genuine & OEM options available</td></tr>
+          <tr><td>Charging port / mic</td><td class="price">1,000 - 3,000</td><td>On-site for many devices</td></tr>
+          <tr><td>Software & diagnostics</td><td class="price">500 - 1,500</td><td>Data-safe diagnostics while you watch</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:12px" class="small">
+        <strong>Priority fee:</strong> +20% on base service for same‑day bookings.<br/>
+        <strong>Scheduled slots:</strong> booking fee reduced by −10% or waived visit fee depending on area.
+      </div>
+    </section>
+
+    <section id="faq" class="hero-card faq" style="margin-top:18px">
+      <h3 style="margin:0 0 8px">FAQ</h3>
+      <div class="faq-item"><strong>Do I need to leave my phone?</strong><div class="small" style="margin-top:6px">No — we fix small-to-medium issues on site. If your device requires factory service or special equipment we will explain and offer pickup to workshop with written consent.</div></div>
+      <div class="faq-item"><strong>How do I pay?</strong><div class="small" style="margin-top:6px">Cash, Easypaisa & bank transfer accepted. Pay after repair when you're satisfied.</div></div>
+      <div class="faq-item"><strong>Are parts genuine?</strong><div class="small" style="margin-top:6px">We source trusted parts and show receipts and serials. Warranty provided for parts & work.</div></div>
+    </section>
+
+    <footer>
+      <div class="small">© <span id="year"></span> FixInView — Karachi. Built for local trust & speed.</div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="small">Pilot areas: Clifton • DHA • Gulshan</div>
+        <div class="small" style="margin-left:10px">Contact: <strong id="whText">WhatsApp</strong></div>
+      </div>
+    </footer>
+  </div>
+
+
+<script>
+// ==== CONFIG ====
+// REPLACE this with your WhatsApp number in international format without plus sign, e.g. 92300xxxxx
+const WHATSAPP_NUMBER = "923172493242";
+
+// helper to format message and open WhatsApp
+function handleBooking(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const datetime = document.getElementById('datetime').value;
+  const urgent = document.getElementById('urgent').value;
+  const device = document.getElementById('device').value.trim();
+  const notes = document.getElementById('notes').value.trim();
+
+  if(!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "+92 3172493242"){
+    alert("Please update the WHATSAPP_NUMBER in the HTML file (in the CONFIG section) with your WhatsApp number in international format (e.g. 92300xxxxxxx).");
+    return false;
+  }
+
+  if(!name || !phone || !address || !datetime || !device){
+    alert("Please fill all required fields.");
+    return false;
+  }
+
+  // Build message
+  const msgLines = [
+    "FixInView — New Booking",
+    "",
+    "Name: " + name,
+    "Phone: " + phone,
+    "Address: " + address,
+    "Preferred: " + (new Date(datetime).toLocaleString()),
+    "Booking type: " + (urgent === "priority" ? "Same-day (PRIORITY)" : "Scheduled"),
+    "Device & issue: " + device,
+    notes ? ("Notes: " + notes) : ""
+  ].filter(Boolean);
+
+  const message = encodeURIComponent(msgLines.join("\\n"));
+  const waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
+
+  // Open in new tab/window
+  window.open(waLink, "_blank");
+  return false;
+}
+
+function copyNumber(){
+  if(!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "+92 3172493242"){
+    navigator.clipboard.writeText("+92 3172493242").then(()=>{
+      alert("Replace the copied number (placeholder) with your WhatsApp number in the HTML CONFIG section.");
+    }).catch(()=>{
+      alert("Copied placeholder. Edit the WHATSAPP_NUMBER in the HTML file.");
+    });
+    return;
+  }
+  navigator.clipboard.writeText(WHATSAPP_NUMBER).then(()=>{
+    alert("WhatsApp number copied to clipboard.");
+  }).catch(()=>{
+    alert("Unable to copy automaticly. Please copy the number manually: " + WHATSAPP_NUMBER);
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('whText').textContent = "WhatsApp: +" + ( (WHATSAPP_NUMBER && WHATSAPP_NUMBER !== "923172493242") ? WHATSAPP_NUMBER : "92 3172493242" );
+</script>
+</body>
+</html>
